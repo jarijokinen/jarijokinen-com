@@ -3,10 +3,14 @@
   "name": "jarijokinen-com",
   "version": "0.0.1",
   "scripts": {
+    "assets:build": "run-s css:build",
+    "assets:watch": "run-p css:watch",
     "astro:build": "astro build",
     "astro:dev": "astro dev",
-    "build": "run-s astro:build",
-    "dev": "run-p astro:dev"
+    "build": "run-s assets:build astro:build",
+    "css:build": "./scripts/sass.sh",
+    "css:watch": "./scripts/sass.sh --watch",
+    "dev": "run-p assets:watch astro:dev"
   },
   "type": "module",
   "devDependencies": {
