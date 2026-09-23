@@ -29,6 +29,19 @@
     text-align: right;
   }
 }
+.header-cta a {
+  background: var(--color-button-bg);
+  border: 1px solid var(--color-button-bg);
+  border-radius: 100px;
+  color: var(--color-button-text);
+  display: inline-block;
+  font-weight: 600;
+  padding: 16px 24px;
+  text-decoration: none;
+  &:hover {
+    background: var(--color-button-hover-bg);
+  }
+}
 .header-nav {
   order: 2;
   @media (min-width: 768px) {

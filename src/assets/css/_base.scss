@@ -1,5 +1,8 @@
 :root {
   --color-bg: #fff;
+  --color-button-bg: #111;
+  --color-button-hover-bg: color-mix(in srgb, var(--color-button-bg), #fff 15%);
+  --color-button-text: #fff;
   --color-link: #369;
   --color-text: #333;
   --font-body: system-ui, sans-serif;
@@ -23,6 +26,9 @@ body {
   font-family: var(--font-body);
   font-size: var(--text-size-normal);
   font-size-adjust: 0.5;
+}
+body.noscroll {
+  overflow: hidden;
 }
 a {
   color: var(--color-link);
