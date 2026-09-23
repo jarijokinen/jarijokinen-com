@@ -1,18 +1,1 @@
-(() => {
-  // src/assets/js/header.js
-  var header = () => {
-    const body = document.querySelector("body");
-    const nav = body.querySelector(".header-nav");
-    const navToggle = nav.querySelector(".header-nav-toggle");
-    navToggle.onclick = () => {
-      const open = nav.toggleAttribute("data-open");
-      toggle.setAttribute("aria-expanded", String(open));
-      body.classList.toggle("noscroll");
-    };
-  };
-
-  // src/assets/js/main.js
-  document.addEventListener("DOMContentLoaded", () => {
-    header();
-  });
-})();
+(()=>{var o=()=>{let e=document.querySelector("body"),t=e.querySelector(".header-nav"),n=t.querySelector(".header-nav-toggle");n.onclick=()=>{let r=t.toggleAttribute("data-open");toggle.setAttribute("aria-expanded",String(r)),e.classList.toggle("noscroll")}};document.addEventListener("DOMContentLoaded",()=>{o()});})();

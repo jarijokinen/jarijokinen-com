@@ -83,7 +83,7 @@ main {
 }
 
 .header-logo > img {
-  height: 30px;
+  height: 25px;
 }
 
 .header-cta {
@@ -103,7 +103,7 @@ main {
   color: var(--color-button-text);
   display: inline-block;
   font-weight: 600;
-  padding: 16px 24px;
+  padding: 10px 20px;
   text-decoration: none;
 }
 .header-cta a:hover {
