@@ -10,6 +10,7 @@ const { title } = Astro.props;
 const timestamp = Date.now();
 const cssUrl = '/css/main.css?' + timestamp;
 const jsUrl = '/js/main.js?' + timestamp;
+const consentLoaderUrl = '/js/consent-loader.js?' + timestamp;
 const menuItems = [
   { href: '/', label: 'Home' }
 ];
@@ -21,6 +22,7 @@ const menuItems = [
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{title}</title>
     <link rel="stylesheet" href={cssUrl}>
+    <script is:inline src={consentLoaderUrl}></script>
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -62,7 +64,7 @@ const menuItems = [
           <ul>
             <li><a href="/privacy">Privacy Policy</a></li>
             <li><a href="/cookies">Cookie Policy</a></li>
-            <li><a href="#">Cookie Settings</a></li>
+            <li><a class="consent-settings" href="#">Cookie Settings</a></li>
           </ul>
         </nav>
       </div>

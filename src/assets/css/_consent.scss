@@ -1,0 +1,39 @@
+.consent {
+  background: var(--color-bg);
+  border: 1px solid #eee;
+  border-radius: 5px;
+  bottom: 20px;
+  box-shadow: 0 12px 60px rgba(0, 0, 0, 0.15);
+  color: var(--color-text);
+  max-height: calc(100dvh - 40px);
+  overflow-y: auto;
+  padding: 20px;
+  position: fixed;
+  right: 20px;
+  user-select: none;
+  width: min(480px, 100% - 40px);
+}
+.consent p {
+  line-height: 1.2;
+  margin: 15px 0;
+}
+.consent-fields > fieldset {
+  display: flex;
+  gap: 10px;
+}
+.consent-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+.consent-buttons > input {
+  background: var(--color-bg);
+  border: 1px solid var(--color-text);
+  border-radius: 100px;
+  color: var(--color-text);
+  cursor: pointer;
+  flex: 1 1 auto;
+  font-weight: 600;
+  padding: 10px 20px;
+}

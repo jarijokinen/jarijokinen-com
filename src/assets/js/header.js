@@ -5,7 +5,7 @@ export const header = () => {
 
   navToggle.onclick = () => {
     const open = nav.toggleAttribute('data-open');
-    toggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-expanded', String(open));
     body.classList.toggle('noscroll');
   };
 };
