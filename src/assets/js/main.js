@@ -1,3 +1,5 @@
+import { header } from './header.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Hello, World!');
+  header();
 });

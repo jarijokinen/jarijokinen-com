@@ -28,5 +28,6 @@ a {
   color: var(--color-link);
 }
 main {
+  min-height: 90vh;
   padding-top: var(--header-height);
 }
