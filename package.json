@@ -5,7 +5,8 @@
   "scripts": {
     "astro:build": "astro build",
     "astro:dev": "astro dev",
-    "build": "run-s astro:build"
+    "build": "run-s astro:build",
+    "dev": "run-p astro:dev"
   },
   "type": "module",
   "devDependencies": {
