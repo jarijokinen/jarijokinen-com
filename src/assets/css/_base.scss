@@ -4,6 +4,7 @@
   --color-text: #333;
   --font-body: system-ui, sans-serif;
   --font-heading: system-ui, sans-serif;
+  --header-height: 85px;
   --text-size-normal: 1.6rem;
 }
 * {
@@ -21,7 +22,11 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--text-size-normal);
+  font-size-adjust: 0.5;
 }
 a {
   color: var(--color-link);
+}
+main {
+  padding-top: var(--header-height);
 }

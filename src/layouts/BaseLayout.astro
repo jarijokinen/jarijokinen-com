@@ -10,6 +10,9 @@ const { title } = Astro.props;
 const timestamp = Date.now();
 const cssUrl = '/css/main.css?' + timestamp;
 const jsUrl = '/js/main.js?' + timestamp;
+const menuItems = [
+  { href: '/', label: 'Home' }
+];
 ---
 
 <html lang="en">
@@ -20,7 +23,31 @@ const jsUrl = '/js/main.js?' + timestamp;
     <link rel="stylesheet" href={cssUrl}>
   </head>
   <body>
-    <slot />
+    <header class="header">
+      <div class="container">
+        <a class="header-logo" href="/">{SITE.name}</a>
+        <nav class="header-nav">
+          <ul>
+            {menuItems.map(({ href, label }) => {
+              return (
+                <li><a href={href}>{label}</a></li>
+              );
+            })}
+          </ul>
+        </nav>
+        <a class="header-cta" href="mailto:jari@j2digital.com">Get In Touch</a>
+      </div>
+    </header>
+    <main class="main">
+      <slot />
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-copyright">
+          &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
+        </div>
+      </div>
+    </footer>
     <script src={jsUrl} defer></script>
   </body>
 </html>
