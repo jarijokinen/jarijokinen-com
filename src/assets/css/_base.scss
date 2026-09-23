@@ -5,10 +5,12 @@
   --color-button-text: #fff;
   --color-link: #369;
   --color-text: #333;
+  --color-text-muted: #666;
   --font-body: system-ui, sans-serif;
   --font-heading: system-ui, sans-serif;
   --header-height: 85px;
   --text-size-normal: 1.6rem;
+  --text-size-small: 1.4rem;
 }
 * {
   border: 0;
@@ -34,6 +36,6 @@ a {
   color: var(--color-link);
 }
 main {
-  min-height: 90vh;
+  min-height: 80vh;
   padding-top: var(--header-height);
 }
