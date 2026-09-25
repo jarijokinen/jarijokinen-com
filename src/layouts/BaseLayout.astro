@@ -8,9 +8,11 @@ interface Props {
 const { title } = Astro.props;
 
 const timestamp = Date.now();
-const cssUrl = '/css/main.css?' + timestamp;
-const jsUrl = '/js/main.js?' + timestamp;
+
 const consentLoaderUrl = '/js/consent-loader.js?' + timestamp;
+const cssUrl = '/css/main.css?' + timestamp;
+const gtmId = SITE.gtmId;
+const jsUrl = '/js/main.js?' + timestamp;
 const menuItems = [
   { href: '/', label: 'Home' },
   { href: '/blog/', label: 'Blog' }
@@ -27,6 +29,18 @@ const menuItems = [
     <link rel="icon" href="/favicon.ico" sizes="any">
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    {gtmId && <script is:inline define:vars={{ gtmId }}>
+      (function(w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0];
+        var j = d.createElement(s);
+        var dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', gtmId);
+    </script>}
   </head>
   <body>
     <header class="header">
