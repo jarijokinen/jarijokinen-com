@@ -6,11 +6,11 @@ created_at: 2022-11-26
 updated_at: 2026-09-26
 ---
 
-Want to hide the navigation bar when the user scrolls down, and then show it
-again when the user scrolls up? This is one situation where you need to detect
-the scroll direction using JavaScript.
+A common use case for detecting scroll direction is hiding the navigation bar
+when the user scrolls down and showing it again when they scroll up. In this
+article, we'll look at a simple way to do this with JavaScript.
 
-Let's start with a simple example:
+Let's start with a basic example:
 
 ```js
 let yprev = window.pageYOffset;
