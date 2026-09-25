@@ -372,6 +372,15 @@ th, td {
   margin: 30px 0;
 }
 
+.post-content p > code {
+  background: var(--color-surface);
+  padding: 3px;
+}
+
+.post-content .astro-code {
+  padding: 15px;
+}
+
 .postlist {
   display: grid;
   gap: 25px;
