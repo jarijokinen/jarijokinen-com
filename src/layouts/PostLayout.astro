@@ -10,14 +10,12 @@ interface Props {
   schema?: Record<string, unknown>;
 }
 const { title, description, created_at, updated_at, schema } = Astro.props;
-
-const type = 'article';
 ---
 
 <BaseLayout
   title={title}
   description={description}
-  type={type}
+  type='article'
   created_at={created_at}
   updated_at={updated_at}
   schema={schema}
