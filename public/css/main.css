@@ -397,7 +397,7 @@ th, td {
 }
 
 .postlist-item a {
-  color: var(--text-color);
+  color: var(--color-text);
   text-decoration: none;
 }
 

@@ -3,12 +3,19 @@ import BaseLayout from './BaseLayout.astro';
 import { SITE } from '../config.ts';
 
 interface Props {
-  title: string;
+  frontmatter: {
+    title: string;
+    description: string;
+  };
 }
-
 const { frontmatter: page } = Astro.props;
 ---
-<BaseLayout title={page.title + ' | ' + SITE.name}>
+
+<BaseLayout
+  title={page.title + ' | ' + SITE.name}
+  description={page.description}
+  type='website'
+>
   <article class="page">
     <section class="page-heading">
       <div class="container">

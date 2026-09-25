@@ -1,29 +1,40 @@
 ---
-import BlogLayout from './BlogLayout.astro';
+import BaseLayout from './BaseLayout.astro';
 import { formatter } from '../lib/date.ts';
 
 interface Props {
   title: string;
-  created_at: string;
-  updated_at: string;
+  description: string;
+  created_at: Date;
+  updated_at?: Date;
+  schema?: Record<string, unknown>;
 }
+const { title, description, created_at, updated_at, schema } = Astro.props;
 
-const { title, created_at, updated_at } = Astro.props;
+const type = 'article';
 ---
-<BlogLayout title={title}>
+
+<BaseLayout
+  title={title}
+  description={description}
+  type={type}
+  created_at={created_at}
+  updated_at={updated_at}
+  schema={schema}
+>
   <article class="post">
     <section class="post-heading">
       <div class="container">
         <h1>{title}</h1>
         <ul class="post-heading-meta">
           <li>by Jari Jokinen</li>
-          <li><time datetime={created_at}>
-            {formatter.format(new Date(created_at))}
+          <li><time datetime={created_at.toISOString()}>
+            {formatter.format(created_at)}
           </time></li>
           {updated_at && (
             <li class="post-heading-meta-updated">
-              Updated <time datetime={updated_at}>
-              {formatter.format(new Date(updated_at))}</time>
+              Updated <time datetime={updated_at.toISOString()}>
+              {formatter.format(updated_at)}</time>
             </li>
           )}
         </ul>
@@ -35,4 +46,4 @@ const { title, created_at, updated_at } = Astro.props;
       </div>
     </section>
   </article>
-</BlogLayout>
+</BaseLayout>

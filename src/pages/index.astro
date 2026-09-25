@@ -1,6 +1,37 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://jarijokinen.com/#website",
+      "url": "https://jarijokinen.com/",
+      "name": "Jari Jokinen",
+      "description": "Personal website of software engineer Jari Jokinen"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://jarijokinen.com/#jarijokinen",
+      "name": "Jari Jokinen",
+      "url": "https://jarijokinen.com/",
+      "jobTitle": "Software Engineer",
+      "description": "Software engineer with 25+ years of experience in web and mobile development, cyber security, Linux, AWS and DevOps.",
+      "sameAs": [
+        "https://github.com/jarijokinen",
+        "https://linkedin.com/in/jarijokinen",
+        "https://stackoverflow.com/users/626301/jari-jokinen",
+        "https://orcid.org/0009-0005-9267-5324"
+      ]
+    }
+  ]
+};
 ---
 
-<BaseLayout title='Jari Jokinen - Software Engineer'>
+<BaseLayout
+  title='Jari Jokinen - Software Engineer'
+  description='Software engineer with 25+ years of experience in web and mobile development, cyber security, Linux servers, AWS and DevOps.'
+  schema={schema}
+>
 </BaseLayout>

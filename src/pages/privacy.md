@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/PageLayout.astro
 title: Privacy Policy
+description: How information is processed when you visit this website?
 ---
 <small>Updated September 25, 2026.</small>
 

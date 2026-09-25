@@ -1,6 +1,7 @@
 ---
 layout: ../layouts/PageLayout.astro
 title: Cookie Policy
+description: How the website uses cookies and similar technologies?
 ---
 <small>Updated September 25, 2026.</small>
 

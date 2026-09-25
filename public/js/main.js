@@ -1,4 +1,4 @@
-(()=>{var g=c=>{let e={storages:{analytics_storage:"Analytics",ad_storage:"Marketing"},actions:{denyAll:"Deny All",allowSelected:"Allow Selected",allowAll:"Allow All"},dialogMarkup:`
+"use strict";(()=>{var g=c=>{let e={storages:{analytics_storage:"Analytics",ad_storage:"Marketing"},actions:{denyAll:"Deny All",allowSelected:"Allow Selected",allowAll:"Allow All"},dialogMarkup:`
       <h2 class="consent-title"></h2>
       <div class="consent-message"></div>
       <div class="consent-fields"></div>
