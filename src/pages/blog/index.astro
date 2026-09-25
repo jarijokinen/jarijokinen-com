@@ -1,0 +1,30 @@
+---
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { formatter } from '../../lib/date.ts';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.created_at.valueOf() - a.data.created_at.valueOf()
+);
+---
+<BlogLayout title='Blog'>
+  <div class="postlist">
+    {posts.map(post => (
+      <article class="postlist-item">
+        <h2><a href={'/blog/' + post.id + '/'}>{post.data.title}</a></h2>
+        <div class="postlist-item-excerpt">{post.data.excerpt}</div>
+        <ul class="postlist-item-meta">
+          <li><time datetime={post.data.created_at}>
+            {formatter.format(new Date(post.data.created_at))}
+          </time></li>
+          {post.data.updated_at && (
+            <li class="post-heading-meta-updated">
+              Updated <time datetime={post.data.updated_at}>
+              {formatter.format(new Date(post.data.updated_at))}</time>
+            </li>
+          )}
+        </ul>
+      </article>
+    ))}
+  </div>
+</BlogLayout>

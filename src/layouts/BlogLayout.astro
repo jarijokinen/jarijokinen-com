@@ -1,0 +1,13 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import { SITE } from '../config.ts';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+<BaseLayout title={title + ' | ' + SITE.name}>
+  <slot />
+</BaseLayout>

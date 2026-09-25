@@ -12,7 +12,7 @@
     "css:watch": "./scripts/sass.sh --watch",
     "dev": "run-p assets:watch astro:dev",
     "js:build": "./scripts/esbuild.sh --minify",
-    "js:watch": "./scripts/esbuild.sh --watch=forever"
+    "js:watch": "./scripts/esbuild.sh --minify --watch=forever"
   },
   "type": "module",
   "devDependencies": {

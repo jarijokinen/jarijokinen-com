@@ -1,0 +1,42 @@
+.postlist {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(1, 1fr);
+  margin-inline: auto;
+  width: min(1000px, calc(100% - 3rem));
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.postlist-item {
+  background: var(--color-surface);
+  border-radius: 5px;
+  padding: 20px;
+  position: relative;
+}
+.postlist-item h2 {
+  margin-bottom: 15px;
+}
+.postlist-item a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+.postlist-item a:hover {
+  text-decoration: underline;
+}
+.postlist-item a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+.postlist-item-meta {
+  display: block;
+  font-size: var(--text-size-small);
+  margin-top: 15px;
+}
+.postlist-item-meta li {
+  display: block;
+  list-style-type: none;
+  margin: 15px 0;
+}
+

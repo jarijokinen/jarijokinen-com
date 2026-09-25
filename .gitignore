@@ -1,3 +1,4 @@
 .astro
+content/**/*.draft.md
 dist
 node_modules
