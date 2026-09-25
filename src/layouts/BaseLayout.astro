@@ -1,15 +1,10 @@
 ---
 import { SITE } from '../config.ts';
 import Meta from '../components/Meta.astro';
+import type { PageMeta } from '../types.ts';
 
-interface Props {
-  title: string;
-  description: string;
-  type?: 'website' | 'article';
-  created_at?: Date;
-  updated_at?: Date;
-  schema?: Record<string, unknown>;
-}
+type Props = PageMeta;
+
 const {
   title, description, type = 'website', created_at, updated_at, schema
 } = Astro.props;

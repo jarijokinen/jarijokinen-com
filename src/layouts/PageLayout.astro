@@ -1,12 +1,11 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import type { PageMeta } from '../types.ts';
 
 interface Props {
-  frontmatter: {
-    title: string;
-    description: string;
-  };
+  frontmatter: Pick<PageMeta, 'title' | 'description'>;
 }
+
 const { frontmatter: page } = Astro.props;
 ---
 

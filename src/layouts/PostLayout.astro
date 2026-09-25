@@ -1,14 +1,10 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import { formatter } from '../lib/date.ts';
+import type { PostMeta } from '../types.ts';
 
-interface Props {
-  title: string;
-  description: string;
-  created_at: Date;
-  updated_at?: Date;
-  schema?: Record<string, unknown>;
-}
+type Props = PostMeta;
+
 const { title, description, created_at, updated_at, schema } = Astro.props;
 ---
 
