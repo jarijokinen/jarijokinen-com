@@ -1,7 +1,7 @@
 ---
-title: Markdown table without header
-excerpt: Markdown doesn't support tables without header, but sometimes you need a table without the extra line at the top.
-description: Markdown doesn't support tables without header, but sometimes you need a table without the extra line at the top.
+title: Markdown table without a header
+excerpt: Markdown doesn't support tables without a header, but sometimes you need a table without the extra line at the top.
+description: Markdown doesn't support tables without a header, but sometimes you need a table without the extra line at the top.
 created_at: 2026-09-27
 ---
 
