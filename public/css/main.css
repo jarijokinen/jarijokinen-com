@@ -2,6 +2,7 @@
   --color-bg: #fff;
   --color-button-bg: #111;
   --color-button-hover-bg: color-mix(in srgb, var(--color-button-bg), #fff 15%);
+  --color-button-secondary-hover-bg: color-mix(in srgb, transparent, #fff 85%);
   --color-button-text: #fff;
   --color-link: #369;
   --color-surface: #e4e8f4;
@@ -65,6 +66,30 @@ thead:has(> tr > th:empty) {
   display: none;
 }
 
+.button {
+  background: var(--color-button-bg);
+  border: 1px solid var(--color-button-bg);
+  border-radius: 100px;
+  color: var(--color-button-text);
+  display: inline-block;
+  font-weight: 600;
+  margin-right: 8px;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+}
+.button:hover {
+  background: var(--color-button-hover-bg);
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--color-button-bg);
+}
+.button--secondary:hover {
+  background: var(--color-button-secondary-hover-bg);
+}
+
 .consent {
   background: var(--color-bg);
   border: 1px solid #eee;
@@ -112,7 +137,7 @@ thead:has(> tr > th:empty) {
 .container {
   height: 100%;
   margin-inline: auto;
-  width: min(1400px, 100% - 3rem);
+  width: min(1400px, 100% - 3.5rem);
 }
 
 .footer {
@@ -162,6 +187,10 @@ thead:has(> tr > th:empty) {
   -webkit-tap-highlight-color: transparent;
 }
 
+.has-hero .header {
+  background: color-mix(in srgb, transparent calc(100% - var(--header-progress, 0%)), var(--color-bg) var(--header-progress, 0%));
+}
+
 .header > .container {
   align-items: center;
   display: grid;
@@ -206,7 +235,7 @@ thead:has(> tr > th:empty) {
   color: var(--color-button-text);
   display: inline-block;
   font-weight: 600;
-  padding: 10px 20px;
+  padding: 12px 20px;
   text-decoration: none;
 }
 .header-cta a:hover {
@@ -306,6 +335,80 @@ thead:has(> tr > th:empty) {
     display: none;
   }
 }
+.hero {
+  background: linear-gradient(#e0eeeb 10%, 66%, #e7e3fb 100%);
+  height: 100vh;
+  margin-top: -85px;
+}
+
+.hero-bg {
+  background-image: linear-gradient(to bottom, rgba(224, 238, 235, 0.8) 0%, rgba(224, 238, 235, 0.8) 30%, transparent 80%), url("/img/hero-helsinki.png");
+  background-position: 65% bottom;
+  background-repeat: no-repeat;
+  background-size: auto 80%;
+  display: block;
+  height: 100vh;
+}
+@media (min-width: 768px) {
+  .hero-bg {
+    background-position: bottom right;
+    background-size: cover;
+  }
+}
+
+.hero-bg > .container {
+  align-items: start;
+  display: flex;
+  justify-content: left;
+  padding-top: 85px;
+}
+@media (min-width: 768px) {
+  .hero-bg > .container {
+    align-items: center;
+    flex-direction: row;
+    padding-top: 0;
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 70ch;
+  padding-top: 30px;
+}
+@media (min-width: 768px) {
+  .hero-content {
+    background: transparent;
+  }
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 2rem + 4vw, 6.4rem);
+  line-height: 1.05;
+}
+
+.hero-content p {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-top: 30px;
+  max-width: 50ch;
+}
+
+.hero-cta {
+  display: flex;
+  margin: 30px 0;
+}
+@media (min-width: 768px) {
+  .hero-cta {
+    display: inline-block;
+  }
+}
+
+.hero-cta > a {
+  flex: 1;
+}
+
 .page-heading {
   padding: 60px 0 20px 0;
 }

@@ -1,0 +1,22 @@
+.button {
+  background: var(--color-button-bg);
+  border: 1px solid var(--color-button-bg);
+  border-radius: 100px;
+  color: var(--color-button-text);
+  display: inline-block;
+  font-weight: 600;
+  margin-right: 8px;
+  padding: 15px 20px;
+  text-align: center;
+  text-decoration: none;
+  &:hover {
+    background: var(--color-button-hover-bg);
+  }
+}
+.button--secondary {
+  background: transparent;
+  color: var(--color-button-bg);
+  &:hover {
+    background: var(--color-button-secondary-hover-bg);
+  }
+}

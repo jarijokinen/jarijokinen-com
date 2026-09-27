@@ -9,6 +9,14 @@
   z-index: 1;
   -webkit-tap-highlight-color: transparent;
 }
+.has-hero .header {
+  background: color-mix(
+    in srgb,
+    transparent calc(100% - var(--header-progress, 0%)),
+    var(--color-bg) var(--header-progress, 0%)
+  );
+
+}
 .header > .container {
   align-items: center;
   display: grid;
@@ -45,7 +53,7 @@
   color: var(--color-button-text);
   display: inline-block;
   font-weight: 600;
-  padding: 10px 20px;
+  padding: 12px 20px;
   text-decoration: none;
   &:hover {
     background: var(--color-button-hover-bg);

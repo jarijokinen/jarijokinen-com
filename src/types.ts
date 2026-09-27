@@ -7,6 +7,7 @@ export interface PageMeta {
   created_at?: Date;
   updated_at?: Date;
   schema?: Record<string, unknown>;
+  hasHero?: boolean;
 }
 
 type PostData = CollectionEntry<'blog'>['data'];

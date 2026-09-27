@@ -1,4 +1,6 @@
 .astro
-content/**/*.draft.md
 dist
+*.draft.*
 node_modules
+public/css/*.css
+public/js/*.js

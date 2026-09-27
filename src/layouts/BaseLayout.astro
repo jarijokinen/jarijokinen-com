@@ -6,7 +6,8 @@ import type { PageMeta } from '../types.ts';
 type Props = PageMeta;
 
 const {
-  title, description, type = 'website', created_at, updated_at, schema
+  title, description, type = 'website', created_at, updated_at, schema,
+  hasHero = false
 } = Astro.props;
 
 const timestamp = Date.now();
@@ -16,7 +17,8 @@ const cssUrl = '/css/main.css?' + timestamp;
 const jsUrl = '/js/main.js?' + timestamp;
 const menuItems = [
   { href: '/', label: 'Home' },
-  { href: '/blog/', label: 'Blog' }
+  { href: '/blog/', label: 'Blog' },
+  { href: '/about/', label: 'About' }
 ];
 
 const fullTitle = Astro.url.pathname === '/' ? title : title + ' | ' + SITE.name;
@@ -53,7 +55,7 @@ const fullTitle = Astro.url.pathname === '/' ? title : title + ' | ' + SITE.name
       schema={schema} 
     />
   </head>
-  <body>
+  <body class:list={{ 'has-hero': hasHero }}>
     <header class="header">
       <div class="container">
         <a class="header-logo" href="/">
