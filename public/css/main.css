@@ -61,6 +61,10 @@ th, td {
   text-align: left;
 }
 
+thead:has(> tr > th:empty) {
+  display: none;
+}
+
 .consent {
   background: var(--color-bg);
   border: 1px solid #eee;
@@ -312,6 +316,10 @@ th, td {
 
 .page h2 {
   margin-top: 40px;
+}
+
+.page h3 {
+  margin-top: 30px;
 }
 
 .page p {
