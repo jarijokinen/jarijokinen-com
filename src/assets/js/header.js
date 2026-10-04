@@ -3,7 +3,7 @@ export const header = () => {
   const header = body.querySelector('.header');
   const nav = header.querySelector('.header-nav');
   const navToggle = nav.querySelector('.header-nav-toggle');
-  const fadeDistance = 150;
+  const fadeDistance = 100;
 
   navToggle.onclick = () => {
     const open = nav.toggleAttribute('data-open');

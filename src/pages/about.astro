@@ -2,32 +2,28 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const title = 'About';
-const description = 'About Jari Jokinen, a software engineer from Helsinki, Finland, with more than 25 years of experience in software development.'
+const description = 'About Jari Jokinen, a software engineer from Helsinki, with more than 25 years of experience in software development.'
 ---
 
 <BaseLayout title={title} description={description}>
-  <section class="section section--heading section--cols">
+  <section class="section section--heading">
     <div class="container">
-      <div>
-        <h1>About Me</h1>
-      </div>
-      <div>
-        <p>I'm a software engineer from Helsinki, Finland.</p>
-      </div>
+      <h1>About Me</h1>
+      <p>I'm a software engineer from Helsinki, Finland.</p>
     </div>
   </section>
 
   <section class="section section--cols">
     <div class="container">
       <div>
-        <h2>Who Am I?</h2>
+        <h2>Who?</h2>
       </div>
       <div>
         <p>
-          I've been developing software for more than 25 years, working across web
-          and mobile apps, cloud platforms, Linux servers, embedded systems and 
-          algorithmic trading. My experience also includes web application and 
-          server security, penetration testing and security hardening.
+          I've been developing software for more than 25 years, working across 
+          web and mobile apps, cloud platforms, Linux servers, embedded systems 
+          and algorithmic trading. My experience also includes web application 
+          and server security, penetration testing and security hardening.
         </p>
         <p>
           I've worked as a freelance developer since 2007, providing software 
@@ -46,33 +42,35 @@ const description = 'About Jari Jokinen, a software engineer from Helsinki, Finl
         <h3>Web & backend</h3>
         <p>
           I build web applications, APIs and backend services, from small
-          standalone systems to larger distributed applications. My current work is
-          primarily based on TypeScript/JavaScript and Node.js, with extensive
-          experience in databases, system integrations and frontend development.
+          standalone systems to larger distributed applications. My current
+          work is primarily based on TypeScript/JavaScript and Node.js, with 
+          extensive experience in databases, system integrations and frontend 
+          development.
         </p>
         <h3>Mobile</h3>
         <p>
-          I develop cross-platform and native mobile applications for Android and 
-          iOS, including integration with backend services, native platform APIs
-          and third-party SDKs. My work covers the full application lifecycle, 
-          from architecture and development to testing, deployment and maintenance.
+          I develop cross-platform and native mobile applications for Android 
+          and iOS, including integration with backend services, native platform
+          APIs and third-party SDKs. My work covers the full application 
+          lifecycle, from architecture and development to testing, deployment 
+          and maintenance.
         </p>
         <p>
-          My current mobile work is primarily based on React Native and TypeScript,
-          with experience in native Android and iOS development when 
-          platform-specific code is needed.
+          My current mobile work is primarily based on React Native and 
+          TypeScript, with experience in native Android and iOS development 
+          when platform-specific code is needed.
         </p>
         <h3>Infrastructure</h3>
         <p>
-          I design, build and operate the infrastructure that applications run on, 
-          with a focus on Linux and AWS. My work includes cloud architecture, 
-          infrastructure as code, containerization, CI/CD, networking, monitoring, 
-          security and production troubleshooting.
+          I design, build and operate the infrastructure that applications run 
+          on, with a focus on Linux and AWS. My work includes cloud 
+          architecture, infrastructure as code, containerization, CI/CD, 
+          networking, monitoring, security and production troubleshooting.
         </p>
         <p>
           I use tools and services including AWS, Linux, Terraform, Docker, 
-          Kubernetes and GitHub Actions, and prefer infrastructure that is simple, 
-          reproducible and easy to operate.
+          Kubernetes and GitHub Actions, and prefer infrastructure that is 
+          simple, reproducible and easy to operate.
         </p>
       </div>
     </div>

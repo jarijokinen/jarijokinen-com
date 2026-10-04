@@ -55,18 +55,26 @@ const fullTitle = Astro.url.pathname === '/' ? title : title + ' | ' + SITE.name
       schema={schema} 
     />
   </head>
-  <body class:list={{ 'has-hero': hasHero }}>
+  <body class:list={{ 
+    'has-hero': hasHero,
+    blog: Astro.url.pathname.includes('/blog/')
+  }}>
     <header class="header">
       <div class="container">
         <a class="header-logo" href="/">
-          <img src="/img/logo.svg" alt="[JJ]">
+          <img src="/img/logo.svg" alt="[JJ]" height="25" width="25">
           {SITE.name}
         </a>
         <nav class="header-nav">
           <ul>
             {menuItems.map(({ href, label }) => {
+              const isActive = Astro.url.pathname === href ||
+              (href !== '/' && Astro.url.pathname.startsWith(href));
+
               return (
-                <li><a href={href}>{label}</a></li>
+                <li class:list={{ active: isActive }}>
+                  <a href={href}>{label}</a>
+                </li>
               );
             })}
           </ul>
@@ -76,7 +84,7 @@ const fullTitle = Astro.url.pathname === '/' ? title : title + ' | ' + SITE.name
           </button>
         </nav>
         <div class="header-cta">
-          <a href="mailto:jari@j2digital.com">Get In Touch</a>
+          <a class="button" href="mailto:jari@j2digital.com">Get In Touch</a>
         </div>
       </div>
     </header>
@@ -85,16 +93,43 @@ const fullTitle = Astro.url.pathname === '/' ? title : title + ' | ' + SITE.name
     </main>
     <footer class="footer">
       <div class="container">
-        <div class="footer-copyright">
-          &copy; {new Date().getFullYear()} {SITE.name}. All rights reserved.
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="/img/logo.svg" alt="[JJ]" height="30" width="30">
+            {SITE.name}
+          </div>
+          <p>
+            A software engineer with more than 25 years of experience in
+            software development.
+          </p>
         </div>
-        <nav class="footer-legal-nav">
-          <ul>
-            <li><a href="/privacy">Privacy Policy</a></li>
-            <li><a href="/cookies">Cookie Policy</a></li>
-            <li><a class="consent-settings" href="#">Cookie Settings</a></li>
-          </ul>
+        <nav class="footer-nav">
+          <div>
+            <h2>About</h2>
+            <ul>
+              <li><a href="/about/">About Me</a></li>
+              <li><a href="/blog/">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h2>Legal</h2>
+            <ul>
+              <li><a href="/privacy/">Privacy Policy</a></li>
+              <li><a href="/cookies/">Cookie Policy</a></li>
+              <li><a class="consent-settings" href="#">Cookie Settings</a></li>
+            </ul>
+          </div>
         </nav>
+        <div class="footer-divider"></div>
+        <div class="footer-copyright">
+          <nobr>&copy; {new Date().getFullYear()} {SITE.name}.</nobr>
+          <nobr>All rights reserved.</nobr>
+        </div>
+        <div class="footer-social">
+          <ul>
+            <li><a href="https://github.com/jarijokinen">GitHub</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
     <script src={jsUrl} defer></script>

@@ -1,29 +1,27 @@
 .hero {
-  background: linear-gradient(#e0eeeb 10%, 66%, #e7e3fb 100%);
-  height: 100vh;
-  margin-top: -85px;
-  max-height: 900px;
-}
-.hero-bg {
   background-image:
     linear-gradient(
       to bottom,
-      rgb(224 238 235 / 80%) 0%,
-      rgb(224 238 235 / 80%) 30%,
+      rgb(0 0 0 / 80%) 0%,
+      rgb(0 0 0 / 80%) 30%,
       transparent 80%
     ),
     url('/img/hero-helsinki.png');
   background-position: 65% bottom;
   background-repeat: no-repeat;
   background-size: auto 80%;
-  display: block;
-  height: 100%;
+  height: 70vh;
+  margin-top: -85px;
+  max-height: 900px;
+  overflow: hidden;
+  position: relative;
   @media (min-width: 768px) {
     background-position: bottom right;
     background-size: auto 100%;
+    height: 100vh;
   }
 }
-.hero-bg > .container {
+.hero > .container {
   align-items: start;
   display: flex;
   justify-content: left;
@@ -42,15 +40,91 @@
   padding-top: 30px;
   @media (min-width: 768px) {
     background: transparent;
+    padding-top: 0;
   }
 }
-.hero-content h1 {
-  font-size: clamp(2.5rem, 2.0rem + 4vw, 6.4rem);
-  line-height: 1.05;
+.hero-content h1 > span {
+  --hero-shimmer-x: -20%;
+  animation: hero-shimmer 4s ease-in-out infinite alternate;
+  color: transparent;
+  background:
+    radial-gradient(
+      ellipse 90% 100% at var(--hero-shimmer-x) 50%,
+      var(--color-accent),
+      color-mix(in srgb, var(--color-accent) 60%, var(--color-text)) 30%,
+      color-mix(in srgb, var(--color-accent) 20%, var(--color-text)) 60%,
+      var(--color-text) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+@property --hero-shimmer-x {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: -20%;
+}
+@keyframes hero-shimmer {
+  from { --hero-shimmer-x: -20%; }
+  to   { --hero-shimmer-x: 120%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-content h1 > span {
+    animation: none;
+    color: var(--color-accent);
+  }
+}
+.hero-star {
+  --hero-star-angle: 25deg;
+  --hero-star-x: 60vw;
+  --hero-star-y: 30vw;
+  animation: hero-star 45s ease-out 1s infinite;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(1 245 212 / 10%) 35%,
+    rgb(1 245 212 / 40%) 75%,
+    #fff 100%
+  );
+  border-radius: 999px;
+  height: 1px;
+  left: 20%;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 15%;
+  transform: rotate(var(--hero-star-angle));
+  transform-origin: right center;
+  width: 120px;
+  z-index: 1;
+}
+.hero-star::after {
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 4px white, 0 0 10px var(--color-accent);
+  content: '';
+  height: 3px;
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+}
+@keyframes hero-star {
+  0%   { opacity: 0; translate: 0 0; }
+  0.5% { opacity: 1; }
+  2%   { opacity: 1; }
+  3%   { opacity: 0; translate: var(--hero-star-x) var(--hero-star-y); }
+  3.01%, 100% { opacity: 0; translate: var(--hero-star-x) var(--hero-star-y); }
+}
+@media (min-width: 768px) {
+  .hero-star {
+    --hero-star-x: 350px;
+    --hero-star-y: 170px;
+    left: 55%;
+    top: 15%;
+  }
 }
 .hero-content p {
-  font-size: 2.0rem;
-  line-height: 1.5;
+  font-size: var(--text-size-extra-large);
   margin-top: 30px;
   max-width: 50ch;
 }

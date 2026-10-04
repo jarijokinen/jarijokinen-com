@@ -1,6 +1,7 @@
 .astro
 dist
 *.draft.*
+*.draft
 node_modules
 public/css/*.css
 public/js/*.js

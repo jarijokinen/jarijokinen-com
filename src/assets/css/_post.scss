@@ -1,16 +1,17 @@
-.post p {
-  font-size: 1.8rem;
-  line-height: 1.5;
-  margin: 15px 0;
-}
-.post h2 {
-  margin-top: 40px;
-}
 .post-heading {
-  background: var(--color-surface);
   padding: 60px 0;
 }
+.post-heading > .container {
+  width: min(68ch, calc(100% - 40px));
+}
+.post-heading-category {
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
 .post-heading-meta {
+  color: var(--color-text-muted);
   display: flex;
   flex-direction: column;
   font-size: var(--text-size-small);
@@ -26,16 +27,27 @@
 .post-heading-meta-updated {
   font-style: italic;
 }
-.post .container {
-  width: min(68ch, calc(100% - 3rem));
+.post-content > .container {
+  width: min(68ch, calc(100% - 40px));
 }
-.post-content {
-  margin: 30px 0;
+.post-content h2 {
+  font-size: 2.8rem;
+  margin-top: 40px;
+}
+.post-content h3 {
+  font-size: 2.2rem;
+  margin-top: 20px;
+}
+.post-content p {
+  font-size: var(--text-size-large);
+  margin: 15px 0;
 }
 .post-content p > code {
   background: var(--color-surface);
   padding: 3px;
 }
 .post-content .astro-code {
-  padding: 15px;
+  background: var(--color-bg) !important;
+  border-radius: 10px;
+  padding: 20px;
 }

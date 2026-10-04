@@ -9,26 +9,28 @@ const posts = (await getCollection('blog')).sort(
 ---
 <BaseLayout
   title='Blog'
-  description='Blog of software engineer Jari Jokinen'
+  description='The blog of software engineer Jari Jokinen'
   type='website'
 >
+  <section class="section section--heading">
+    <div class="container">
+      <h1>Blog</h1>
+    </div>
+  </section>
+
   <div class="postlist">
-    {posts.map(post => (
-      <article class="postlist-item">
-        <h2><a href={'/blog/' + post.id + '/'}>{post.data.title}</a></h2>
-        <div class="postlist-item-excerpt">{post.data.excerpt}</div>
-        <ul class="postlist-item-meta">
-          <li><time datetime={post.data.created_at.toISOString()}>
-            {formatter.format(post.data.created_at)}
-          </time></li>
-          {post.data.updated_at && (
-            <li class="post-heading-meta-updated">
-              Updated <time datetime={post.data.updated_at.toISOString()}>
-              {formatter.format(post.data.updated_at)}</time>
-            </li>
-          )}
-        </ul>
-      </article>
-    ))}
+    <div class="container">
+      {posts.map(post => (
+        <article class="postlist-item">
+          <ul class="postlist-item-meta">
+            <li><time datetime={post.data.created_at.toISOString()}>
+              {formatter.format(post.data.created_at)}
+            </time></li>
+          </ul>
+          <h2><a href={'/blog/' + post.id + '/'}>{post.data.title}</a></h2>
+          <div class="postlist-item-excerpt">{post.data.excerpt}</div>
+        </article>
+      ))}
+    </div>
   </div>
 </BaseLayout>

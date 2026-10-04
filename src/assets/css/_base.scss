@@ -1,16 +1,24 @@
 :root {
-  --color-bg: #fff;
-  --color-button-bg: #111;
-  --color-button-hover-bg: color-mix(in srgb, var(--color-button-bg), #fff 15%);
-  --color-button-secondary-hover-bg: color-mix(in srgb, transparent, #fff 85%);
-  --color-button-text: #fff;
-  --color-link: #369;
+  --color-accent: #01f5d4;
+  --color-bg: #000;
+  --color-link: var(--color-accent);
+  --color-on-accent: #000;
   --color-surface: #e4e8f4;
-  --color-text: #222;
-  --color-text-muted: #666;
+  --color-text: #fff;
+  --color-text-muted: #ccc;
+  --container-width: 1200px;
   --font-body: system-ui, sans-serif;
   --font-heading: system-ui, sans-serif;
-  --header-height: 85px;
+  --header-height: 90px;
+  --line-height-heading-1: 1.00;
+  --line-height-heading-2: 1.05;
+  --line-height-heading-3: 1.10;
+  --line-height-normal: 1.5;
+  --text-size-heading-1: clamp(3.5rem, 2.2rem + 5vw, 7.6rem);
+  --text-size-heading-2: clamp(2.75rem, 2rem + 3vw, 5.5rem);
+  --text-size-heading-3: clamp(2rem, 1.6rem + 1.8vw, 3.75rem);
+  --text-size-extra-large: 2.2rem;
+  --text-size-large: 1.8rem;
   --text-size-normal: 1.6rem;
   --text-size-small: 1.4rem;
 }
@@ -20,6 +28,10 @@
   line-height: 1;
   margin: 0;
   padding: 0;
+}
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
 }
 html {
   font-size: 62.5%;
@@ -34,12 +46,28 @@ body {
 body.noscroll {
   overflow: hidden;
 }
+main {
+  padding-top: var(--header-height);
+}
+h1 {
+  font-size: var(--text-size-heading-1);
+  line-height: var(--line-height-heading-1);
+  text-wrap: balance;
+}
+h2 {
+  font-size: var(--text-size-heading-2);
+  line-height: var(--line-height-heading-2);
+}
+h3 {
+  font-size: var(--text-size-heading-3);
+  line-height: var(--line-height-heading-3);
+}
+p {
+  font-size: var(--text-size-normal);
+  line-height: var(--line-height-normal);
+}
 a {
   color: var(--color-link);
-}
-main {
-  min-height: 80vh;
-  padding-top: var(--header-height);
 }
 table {
   margin: 30px 0;
