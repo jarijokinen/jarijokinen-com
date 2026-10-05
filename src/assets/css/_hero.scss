@@ -63,6 +63,7 @@
     align-items: center;
     flex-direction: row;
     padding-top: 0;
+    width: min(var(--container-width), calc(100% - 80px));
   }
 }
 .hero-content {

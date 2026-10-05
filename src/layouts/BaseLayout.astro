@@ -29,6 +29,14 @@ const fullTitle = Astro.url.pathname === '/' ? title : title + ' | ' + SITE.name
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{fullTitle}</title>
+    <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" 
+      type="font/woff2" crossorigin>
+    <link rel="preload" href="/fonts/inter-latin-600-normal.woff2" as="font" 
+      type="font/woff2" crossorigin>
+    <link rel="preload" href="/img/logo.svg?v2" as="image">
+    <link rel="preload" href="/img/hero-helsinki.png?v2" as="image" 
+      fetchpriority="high">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="stylesheet" href={cssUrl}>
     <script is:inline src={consentLoaderUrl}></script>
     <link rel="icon" href="/favicon.ico" sizes="any">

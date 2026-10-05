@@ -52,17 +52,20 @@ main {
 h1 {
   font-family: var(--font-heading);
   font-size: var(--text-size-heading-1);
+  font-weight: 600;
   line-height: var(--line-height-heading-1);
   text-wrap: balance;
 }
 h2 {
   font-family: var(--font-heading);
   font-size: var(--text-size-heading-2);
+  font-weight: 600;
   line-height: var(--line-height-heading-2);
 }
 h3 {
   font-family: var(--font-heading);
   font-size: var(--text-size-heading-3);
+  font-weight: 600;
   line-height: var(--line-height-heading-3);
 }
 p {
