@@ -38,9 +38,15 @@
   justify-content: center;
   max-width: 70ch;
   padding-top: 30px;
+  translate: 0 var(--parallax-y, 0px);
   @media (min-width: 768px) {
     background: transparent;
     padding-top: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-content {
+    translate: none;
   }
 }
 .hero-content h1 > span {
@@ -107,6 +113,11 @@
   top: 50%;
   transform: translateY(-50%);
   width: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-star {
+    animation: none;
+  }
 }
 @keyframes hero-star {
   0%   { opacity: 0; translate: 0 0; }

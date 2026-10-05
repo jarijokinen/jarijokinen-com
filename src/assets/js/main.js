@@ -1,5 +1,6 @@
 import { consent } from '@jarijokinen/consent';
 import { header } from './header.js';
+import { hero } from './hero.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   const consentOptions = {
@@ -25,4 +26,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   consent(consentOptions);
   header();
+  hero();
 });
