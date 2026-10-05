@@ -7,8 +7,8 @@
   --color-text: #fff;
   --color-text-muted: #ccc;
   --container-width: 1200px;
-  --font-body: system-ui, sans-serif;
-  --font-heading: system-ui, sans-serif;
+  --font-body: Inter, system-ui, sans-serif;
+  --font-heading: Inter, system-ui, sans-serif;
   --header-height: 90px;
   --line-height-heading-1: 1.00;
   --line-height-heading-2: 1.05;
@@ -50,15 +50,18 @@ main {
   padding-top: var(--header-height);
 }
 h1 {
+  font-family: var(--font-heading);
   font-size: var(--text-size-heading-1);
   line-height: var(--line-height-heading-1);
   text-wrap: balance;
 }
 h2 {
+  font-family: var(--font-heading);
   font-size: var(--text-size-heading-2);
   line-height: var(--line-height-heading-2);
 }
 h3 {
+  font-family: var(--font-heading);
   font-size: var(--text-size-heading-3);
   line-height: var(--line-height-heading-3);
 }
