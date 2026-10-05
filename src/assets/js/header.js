@@ -3,7 +3,11 @@ export const header = () => {
   const header = body.querySelector('.header');
   const nav = header.querySelector('.header-nav');
   const navToggle = nav.querySelector('.header-nav-toggle');
-  const fadeDistance = 100;
+  
+  const headerHeight = header.getBoundingClientRect().height;
+  const heroHeading = document.querySelector('.hero h1');
+  const fadeDistance = 
+    (heroHeading?.getBoundingClientRect().top ?? 0) + headerHeight;
 
   navToggle.onclick = () => {
     const open = nav.toggleAttribute('data-open');
